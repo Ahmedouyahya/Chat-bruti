@@ -3089,13 +3089,58 @@
             .game-title { font-size: 2rem; }
             .game-subtitle { font-size: 1rem; }
             .action-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .levels-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-            .level-card { width: 90px; height: 90px; }
-            .characters-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .character-card { padding: 15px; }
-            .character-avatar { font-size: 2rem; }
+            
+            /* LEVELS / STAGES - Better on mobile */
+            .levels-grid { 
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 15px; 
+                width: 95%;
+                max-width: 400px;
+                margin: 30px auto;
+            }
+            .level-card { 
+                width: 100%; 
+                height: auto;
+                aspect-ratio: 1;
+                min-height: 80px;
+                padding: 10px;
+            }
+            .level-number {
+                font-size: 1.8rem;
+            }
+            .level-stars {
+                font-size: 0.8rem;
+            }
+            
+            /* CHARACTERS - Better on mobile */
+            .characters-grid { 
+                grid-template-columns: 1fr 1fr; 
+                gap: 12px;
+                width: 95%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            .character-card { 
+                padding: 12px;
+            }
+            .character-avatar { 
+                font-size: 2.5rem;
+                margin-bottom: 8px;
+            }
+            .character-name {
+                font-size: 0.9rem;
+            }
+            .character-desc {
+                font-size: 0.7rem;
+                display: none; /* Hide description on small screens */
+            }
+            .character-difficulty {
+                font-size: 0.7rem;
+                margin-top: 5px;
+            }
+            
             .mode-cards { flex-direction: column; gap: 15px; }
-            .mode-card { width: 200px; padding: 25px; }
+            .mode-card { width: 90%; max-width: 280px; padding: 20px; }
             .chat-container { width: 98%; height: 45vh; max-height: 320px; }
             .confusion-container { width: 95%; top: 70px; }
             .powerups-bar { gap: 3px; }
@@ -3105,7 +3150,7 @@
             .hud-left, .hud-right { gap: 5px; }
             .timer { font-size: 1.5rem; }
             .agent-container { transform: scale(0.6); bottom: auto; top: 25%; }
-            .btn { padding: 12px 30px; font-size: 1rem; }
+            .btn { padding: 12px 25px; font-size: 1rem; }
             .score-display { font-size: 0.85rem; }
             .hints-bar { padding: 8px 10px; }
             .hint-chip { padding: 4px 10px; font-size: 0.7rem; }
@@ -3149,9 +3194,50 @@
         @media (max-width: 480px) {
             .game-title { font-size: 1.5rem; }
             .game-subtitle { font-size: 0.85rem; }
-            .levels-grid { grid-template-columns: repeat(2, 1fr); }
-            .level-card { width: 70px; height: 70px; font-size: 1.5rem; }
-            .characters-grid { grid-template-columns: 1fr; }
+            
+            /* LEVELS - Even smaller */
+            .levels-grid { 
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
+                max-width: 320px;
+            }
+            .level-card {
+                min-height: 70px;
+                padding: 8px;
+            }
+            .level-number {
+                font-size: 1.5rem;
+            }
+            
+            /* CHARACTERS - Stack on small phones */
+            .characters-grid { 
+                grid-template-columns: 1fr; 
+                gap: 10px;
+                max-width: 300px;
+            }
+            .character-card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+                padding: 12px 15px;
+                text-align: left;
+            }
+            .character-avatar {
+                font-size: 2rem;
+                margin-bottom: 0;
+            }
+            .character-info {
+                flex: 1;
+            }
+            .character-name {
+                font-size: 1rem;
+                margin-bottom: 2px;
+            }
+            .character-difficulty {
+                margin-top: 2px;
+            }
+            
             .chat-container { height: 40vh; max-height: 280px; }
             .agent-container { transform: scale(0.5); top: 20%; }
             .powerup-btn { padding: 4px 5px; font-size: 0.65rem; }
@@ -3202,7 +3288,19 @@
         @media (max-width: 360px) {
             .game-title { font-size: 1.3rem; }
             .btn { padding: 10px 20px; font-size: 0.9rem; }
-            .level-card { width: 60px; height: 60px; }
+            
+            .levels-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                max-width: 200px;
+            }
+            .level-card { 
+                min-height: 60px; 
+            }
+            .level-number {
+                font-size: 1.3rem;
+            }
+            
             .agent-container { transform: scale(0.4); }
             .chat-container { height: 35vh; }
             
