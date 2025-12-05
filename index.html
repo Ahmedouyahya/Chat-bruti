@@ -3273,6 +3273,52 @@
                 padding-bottom: max(10px, env(safe-area-inset-bottom));
             }
         }
+
+        /* FIX: Enable scroll on game screen for mobile */
+        @media (max-width: 768px) {
+            #game-screen {
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            #game-screen .game-area {
+                position: relative;
+                min-height: 200px;
+            }
+            
+            #game-screen .chat-container {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                width: 95%;
+                margin: 10px auto 20px auto;
+            }
+            
+            #game-screen .confusion-container {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                width: 95%;
+                margin: 70px auto 10px auto;
+            }
+            
+            #game-screen .agent-container {
+                position: relative;
+                left: auto !important;
+                bottom: auto;
+                transform: scale(0.6);
+                margin: 20px auto;
+            }
+        }
+
+        /* Even smaller phones */
+        @media (max-width: 480px) {
+            #game-screen .agent-container {
+                transform: scale(0.5);
+            }
+        }
     </style>
 </head>
 <body>
