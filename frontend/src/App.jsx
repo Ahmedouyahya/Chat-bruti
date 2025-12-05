@@ -48,6 +48,10 @@ function App() {
         body: JSON.stringify({ message: inputMessage }),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
 
       // Add bot response
