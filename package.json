@@ -1,0 +1,19 @@
+{
+  "name": "chat-bruti",
+  "version": "1.0.0",
+  "description": "Chat'bruti - Un chatbot délicieusement inutile mais passionnément vivant !",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": ["chatbot", "express", "react", "philosophy", "humor"],
+  "author": "",
+  "license": "MIT",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
